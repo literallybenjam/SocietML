@@ -50,7 +50,7 @@ SocietML.parse = function(e) {
                 if (this_element.dataset.societmlNamesrc) data.element.href = this_element.dataset.societmlNamesrc;
                 data.subelement = content.createElement("div");
                 data.subelement.className = "societml-fb_img";
-                data.subelement.style.backgroundImage = 'url("' + this_element.dataset.societmlImg.trim() + '")';
+                if (this_element.dataset.societmlImg) data.subelement.style.backgroundImage = 'url("' + this_element.dataset.societmlImg.trim() + '")';
                 data.container.appendChild(data.element).appendChild(data.subelement);
 
                 //  Heading  //
