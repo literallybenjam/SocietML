@@ -198,7 +198,7 @@ SocietML.parse = function(e) {
 
                     //  Sets data.n and populates names, text, bg if necessary  //
                     if (this_element.children.item(data.i).dataset.societmlName) data.n = data.names.indexOf(this_element.children.item(data.i).dataset.societmlName);
-                    else data.n = data.names.indexOf(data.previous);
+                    else data.n = data.names.indexOf(data.current);
                     if (data.n === -1) {
                         data.n = data.names.length;
                         data.names.push(this_element.children.item(data.i).dataset.societmlName);

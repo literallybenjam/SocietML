@@ -68,7 +68,7 @@ Here is a sample type-MSG SocietML element:
     <p data-societml-name="Person 1" data-societml-bg="#E6E5EB" data-societml-text="black">Hey what's up?</p>
     <p data-societml-name="Person 2" data-societml-bg="#1289FD" data-societml-text="white">Not much yo.</p>
     <p data-societml-name="Person 1">Only specify data-societml-bg and data-societml-text the first time someone's name comes up.</p>
-    <p>If data-societml-name is omitted it defaults to the second-previous one.</p>
+    <p>If data-societml-name is omitted it defaults to the previous one.</p>
 </blockquote>
 ```
 
