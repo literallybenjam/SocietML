@@ -61,3 +61,4 @@ Here is a sample type-MSG SocietML element:
 The `societml.js` file contains a script to render SocietML elements.
 Simply include this script in your file and run `SocietML.parse()`.
 If you only want to process a single element or document, `SocietML.parse()` will take this as a parameter; otherwise, it will process `document.documentElement`.
+The return value of `SocietML.parse()` is the processed element.

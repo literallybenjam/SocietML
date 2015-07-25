@@ -1,17 +1,18 @@
 /* jslint asi:true, browser:true */
 
 var SocietML = {
-    getStyleElement: undefined,
     parse: undefined
 };
 
 SocietML.parse = function(e) {
 
+    //  Making sure things are what we expect  //
     if (!e) e = document.documentElement;
     else if (e instanceof Document) e = e.documentElement;
     else if (!(e instanceof Element)) e = document.documentElement;
     if (!e.dataset) return;
 
+    //  Variable setup  //
     var i;
     var elements = e.querySelectorAll("*[data-societml-type]");
     var this_element;
@@ -19,6 +20,7 @@ SocietML.parse = function(e) {
     var content;
     var data;
 
+    //  Runs over every SocietML element  //
     for (i = 0; i < elements.length; i++) {
 
         //  Sets up the containing iframe  //
@@ -255,10 +257,14 @@ SocietML.parse = function(e) {
 
         }
 
+        //  Replaces the markup with the rendering  //
         this_element.parentElement.removeChild(this_element);
         frame.style.display = "block";
         frame.style.height = content.documentElement.scrollHeight + "px";
 
     }
+
+    //  Returns the processed element  //
+    return e;
 
 }
