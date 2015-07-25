@@ -12,14 +12,30 @@ Each markup type has its own syntax:
 
 ###  type-FB  ###
 
-(Coming soon!)
-
 Type-FB represents a longform social-media post.
+The only permitted child nodes of a type-FB parent are text nodes and `<a>` elements.
+
+There are several attributes that you should use to provide additional information.
+Set these on the root element:
+
+- `data-societml-img` gives the location of a profile picture for the post.
+- `data-societml-name` describes the author of the post. If not set, it defaults to "A Friend".
+- `data-societml-namesrc` sets the link to the author's profile page.
+- `data-societml-via` tells where the post came from.
+- `data-societml-viasrc` sets the link to the "via" page.
+- `data-societml-datetime` gives the date and time of the post.
+
+Line-breaks inside text nodes are preserved, and double-line-breaks create new paragraphs.
+
+You can optionally include a link with a picture or preview information by setting `data-societml-img` and/or `data-societml-title` on an `<a>` element.
+If `data-societml-title` is set, a description may be added in the elements contents and an author may be included with `data-societml-author`.
+If no `data-societml-title` is set, this information is ignored and only the picture is displayed.
+Only one link can be given a preview per type-FB post.
 
 ###  type-MSG  ###
 
 Type-MSG represents messaging; for example in a text-message or chatroom setting.
-The only permitted child elements of a type-MSG parent are `<p>` elements.
+The only permitted child nodes of a type-MSG parent are `<p>` elements.
 The `data-societml-name` attribute represents the person talking; each person should be represented by exactly one `data-societml-name` attribute.
 
 On the first `<p>` element with a given `data-societml-name` attribute, a few additional parameters may be set: `data-societml-bg` and `data-societml-text`.
