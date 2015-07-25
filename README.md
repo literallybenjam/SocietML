@@ -59,6 +59,8 @@ These can only be set the first time a name appears, and cannot be changed later
 The `data-societml-datetime` element can assign a date and/or time to each message.
 This should follow the syntax of the `datetime` attribute of the `<time>` element.
 
+You can start a message with `/me` to write the message in first-person; give it a try!
+
 Here is a sample type-MSG SocietML element:
 
 ```html
