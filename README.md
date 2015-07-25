@@ -32,6 +32,20 @@ If `data-societml-title` is set, a description may be added in the elements cont
 If no `data-societml-title` is set, this information is ignored and only the picture is displayed.
 Only one link can be given a preview per type-FB post.
 
+Here is a sample type-FB SocietML element:
+
+```html
+<blockquote data-societml-type="fb" data-societml-name="Concerned Friend" data-societml-img="" data-societml-datetime="2015-07-23T17:00:00-0700">
+    Here's some text, and then a link: <a href="http://example.com">example.com</a>. That's all the formatting you can do with type-FB.
+    Line-breaks are preserved.
+
+    Two or more line-breaks produce a new paragraph.
+    <a href="http://example.com" data-societml-title="example title" data-societml-author="example author">
+        Here is the preview content for the link.
+    </a>
+</blockquote>
+```
+
 ###  type-MSG  ###
 
 Type-MSG represents messaging; for example in a text-message or chatroom setting.
