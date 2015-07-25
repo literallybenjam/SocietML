@@ -23,12 +23,12 @@ Set these on the root element:
 - `data-societml-namesrc` sets the link to the author's profile page.
 - `data-societml-via` tells where the post came from.
 - `data-societml-viasrc` sets the link to the "via" page.
-- `data-societml-datetime` gives the date and time of the post.
+- `data-societml-datetime` gives the date and time of the post. This should follow the syntax of the `datetime` attribute of the `<time>` element.
 
 Line-breaks inside text nodes are preserved, and double-line-breaks create new paragraphs.
 
 You can optionally include a link with a picture or preview information by setting `data-societml-img` and/or `data-societml-title` on an `<a>` element.
-If `data-societml-title` is set, a description may be added in the elements contents and an author may be included with `data-societml-author`.
+If `data-societml-title` is set, a description may be added in the element's contents and an author may be included with `data-societml-author`.
 If no `data-societml-title` is set, this information is ignored and only the picture is displayed.
 Only one link can be given a preview per type-FB post.
 

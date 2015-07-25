@@ -45,13 +45,15 @@ SocietML.parse = function(e) {
                 data.container.className = "societml-fb"
 
                 //  Photo  //
-                data.element = content.createElement("a");
-                data.element.className= "societml-fb_img_anchor";
-                if (this_element.dataset.societmlNamesrc) data.element.href = this_element.dataset.societmlNamesrc;
-                data.subelement = content.createElement("div");
-                data.subelement.className = "societml-fb_img";
-                if (this_element.dataset.societmlImg) data.subelement.style.backgroundImage = 'url("' + this_element.dataset.societmlImg.trim() + '")';
-                data.container.appendChild(data.element).appendChild(data.subelement);
+                if (this_element.dataset.societmlImg) {
+                    data.element = content.createElement("a");
+                    data.element.className= "societml-fb_img_anchor";
+                    if (this_element.dataset.societmlNamesrc) data.element.href = this_element.dataset.societmlNamesrc;
+                    data.subelement = content.createElement("div");
+                    data.subelement.className = "societml-fb_img";
+                    data.subelement.style.backgroundImage = 'url("' + this_element.dataset.societmlImg.trim() + '")';
+                    data.container.appendChild(data.element).appendChild(data.subelement);
+                }
 
                 //  Heading  //
                 data.element = content.createElement("p");
