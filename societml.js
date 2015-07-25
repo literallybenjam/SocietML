@@ -185,7 +185,7 @@ SocietML.parse = function(e) {
                 content.body.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1 2" preserveAspectRatio="xMinYMid" fill="currentColor" stroke="none"><defs><path id="societml-msg_left_arrow" d="M 1 0 L 0 1 L 1 2 Z"/><path id="societml-msg_right_arrow" d="M 0 0 L 1 1 L 0 2 Z"/></defs></svg>';
 
                 //  Sets up message data  //
-                data = {n: 0, i: 0, j: 0, names: [], text: [], bg: [], align: true, current: undefined, previous: undefined, container: content.createElement("blockquote"), msg: undefined};
+                data = {n: 0, i: 0, names: [], text: [], bg: [], align: true, current: undefined, previous: undefined, container: content.createElement("blockquote"), msg: undefined};
 
                 //  Loops over each message  //
                 for (data.i = 0; data.i < this_element.children.length; data.i++) {
@@ -228,11 +228,7 @@ SocietML.parse = function(e) {
                     data.msg.dataset.societmlName = data.names[data.n];
                     if (data.align) data.msg.classList.add("societml-align_right");
                     else data.msg.classList.add("societml-align_left");
-
-                    //  Fills the message with content  //
-                    for (data.j = 0; data.j < this_element.children.item(data.i).childNodes.length; data.j++) {
-                        data.msg.appendChild(content.importNode(this_element.children.item(data.i).childNodes.item(data.j), true));
-                    }
+                    data.msg.textContent = this_element.children.item(data.i).textContent;
 
                     //  Appends the message to the container  //
                     data.container.appendChild(data.msg);
