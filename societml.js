@@ -150,7 +150,7 @@ SocietML.parse = function(e) {
                             data.subelement = content.createElement("span");
                             data.subelement.className = "societml-fb_preview_info";
                             data.subelement.textContent = data.preview.hostname;
-                            if (this_element.childNodes.item(data.i).dataset.societmlAuthor) data.subelement.appendChild(content.createTextNode("\u00a0\u00a0|\u00a0\u00a0" + this_element.childNodes.item(data.i).dataset.societmlAuthor.trim()));
+                            if (this_element.childNodes.item(data.i).dataset.societmlAuthor) data.subelement.appendChild(content.createTextNode("\u00a0\u00a0|\u00a0\u00a0by " + this_element.childNodes.item(data.i).dataset.societmlAuthor.trim()));
                             data.element.appendChild(data.subelement);
 
                             //  Adding content  //
