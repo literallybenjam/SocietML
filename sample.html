@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>SocietML Sample</title>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="societml.js"></script>
+        <script type="text/javascript">
+            window.addEventListener("load", SocietML.parse, false);
+        </script>
+    </head>
+    <body>
+        <h2>type FB</h2>
+        <blockquote data-societml-type="fb" data-societml-name="Facebook Friend" data-socieml-via="Pageatron" data-societml-img="" data-societml-datetime="2015-07-23T17:00:00-0700">
+            Here's some text, and then a link: <a href="http://example.com">example.com</a>. Facebook is not the best at links.
+            <a href="http://example.com" class="societml-fb-preview" data-societml-img="" data-socetml-author="example author">
+                <h1>Wrap the title in &lt;h1&gt; tags</h1>
+                Here is the preview content for the link.
+            </a>
+        </blockquote>
+        <h2>type MSG</h2>
+        <blockquote data-societml-type="msg">
+            <p data-societml-name="Person 1" data-societml-bg="#E6E5EB" data-societml-text="black">Hey what's up?</p>
+            <p data-societml-name="Person 2" data-societml-bg="#1289FD" data-societml-text="white">Not much yo.</p>
+            <p data-societml-name="Person 1">Only specify data-societml-bg and data-societml-text the first time someone's name comes up.</p>
+            <p>If data-societml-name is omitted it defaults to the second-previous one.</p>
+        </blockquote>
+    </body>
+</html>
