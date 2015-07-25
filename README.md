@@ -26,6 +26,9 @@ On the first `<p>` element with a given `data-societml-name` attribute, a few ad
 These associate background and text colours with the name in question.
 These can only be set the first time a name appears, and cannot be changed later.
 
+The `data-societml-datetime` element can assign a date and/or time to each message.
+This should follow the syntax of the `datetime` attribute of the `<time>` element.
+
 Here is a sample type-MSG SocietML element:
 
 ```html
