@@ -61,35 +61,35 @@
                 m=n.textContent.trim().substr(0,4)==="/me "?true:false;
                 if(!p||I.n[j]!==p.getAttribute("data-societml-name")||m){
                     if(p&&p.classList.contains("societml-msg"))p.innerHTML+=a?'<svg class="societml-arrow" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1 2" preserveAspectRatio="xMinYMid" fill="'+I.b[I.n.indexOf(p.getAttribute("data-societml-name"))]+'" stroke="none"><use xlink:href="#societml-msg_right_arrow"></svg>':'<svg class="societml-arrow" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1 2" preserveAspectRatio="xMinYMid" fill="'+I.b[I.n.indexOf(p.getAttribute("data-societml-name"))]+'" stroke="none"><use xlink:href="#societml-msg_left_arrow"></svg>';
-                    if(m){
-                        E.className="societml-me";
-                        E.title=I.n[j];
-                        if(n.hasAttribute("data-societml-datetime"))n.title+=" @ "+n.getAttribute("data-societml-datetime");
-                        E.appendChild(C.D.createElement("b")).textContent=I.n[j];
-                        E.appendChild(C.D.createTextNode(n.textContent.trim().substr(3)));
-                    }
-                    else{
+                    if(p&&I.n[j]!==p.getAttribute("data-societml-name"))a=!a;
+                    if(!m){
                         E.className="societml-intro";
                         E.setAttribute("data-societml-name",I.n[j]);
                         if(I.n[j]!==P)E.textContent=I.n[j];
+                        if(a)E.classList.add("societml-rt");
+                        else E.classList.add("societml-lf");
+                        C.D.body.appendChild(E=C.D.createElement("p"));
                     }
-                    if(p&&I.n[j]!==p.getAttribute("data-societml-name")){
-                        P=p.getAttribute("data-societml-name");
-                        a=!a;
-                    }
+                    if(p&&I.n[j]!==p.getAttribute("data-societml-name"))P=p.getAttribute("data-societml-name");
+                }
+                if(m){
+                    E.className="societml-me";
+                    E.title=I.n[j];
+                    if(n.hasAttribute("data-societml-datetime"))E.title+=" @ "+n.getAttribute("data-societml-datetime");
+                    E.appendChild(C.D.createElement("b")).textContent=I.n[j];
+                    E.appendChild(C.D.createTextNode(n.textContent.trim().substr(3)));
+                }
+                else{
+                    E.className="societml-msg";
+                    E.title=I.n[j];
+                    if(n.hasAttribute("data-societml-datetime"))E.title+=" @ "+n.getAttribute("data-societml-datetime");
+                    E.style.color=I.t[j];
+                    E.style.background=I.b[j];
+                    E.setAttribute("data-societml-name",I.n[j]);
                     if(a)E.classList.add("societml-rt");
                     else E.classList.add("societml-lf");
-                    C.D.body.appendChild(E=C.D.createElement("p"));
+                    E.textContent=n.textContent;
                 }
-                E.className="societml-msg";
-                E.title=I.n[j];
-                if(n.hasAttribute("data-societml-datetime"))n.title+=" @ "+n.getAttribute("data-societml-datetime");
-                E.style.color=I.t[j];
-                E.style.background=I.b[j];
-                E.setAttribute("data-societml-name",I.n[j]);
-                if(a)E.classList.add("societml-rt");
-                else E.classList.add("societml-lf");
-                E.textContent=n.textContent;
             }
             if(C.D.body.lastElementChild&&C.D.body.lastElementChild.classList.contains("societml-msg"))C.D.body.lastElementChild.innerHTML+=a?'<svg class="societml-arrow" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1 2" preserveAspectRatio="xMinYMid" fill="'+I.b[I.n.indexOf(C.D.body.lastElementChild.getAttribute("data-societml-name"))]+'" stroke="none"><use xlink:href="#societml-msg_right_arrow"></svg>':'<svg class="societml-arrow" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 1 2" preserveAspectRatio="xMinYMid" fill="'+I.b[I.n.indexOf(C.D.body.lastElementChild.getAttribute("data-societml-name"))]+'" stroke="none"><use xlink:href="#societml-msg_left_arrow"></svg>';
             C.D.head.appendChild(C.D.createElement("style")).innerHTML='html{margin:0;padding:0;background:white;font-size:15px;line-height:18px;font-family:Helvetica Neue,Helvetica,sans-serif;font-weight:300;letter-spacing:.03125em;}body{margin:0;padding:15px;}body>svg{display:none;}.societml-me{position:relative;margin:6px auto;padding:0;max-width:475px;font-style:italic;color:#636363;text-align:center;}.societml-msg{position:relative;margin:3px 0;padding:6px;border-radius:3px;max-width:463px;width:-moz-fit-content;width:-webkit-fit-content;width:fit-content;}.societml-msg.societml-lf{margin:3px auto 3px 6px;}.societml-msg.societml-rt{margin:3px 6px 3px auto;}.societml-arrow{position:absolute;top:0;width:6px;height:100%;}.societml-msg.societml-lf .societml-arrow{left:-6px;}.societml-msg.societml-rt .societml-arrow{right:-6px;}.societml-intro{margin:6px 6px 0;padding:0 6px;max-width:463px;width:-moz-fit-content;width:-webkit-fit-content;width:fit-content;color:#636363;font-size:9px;font-weight:bold;letter-spacing:.125em;line-height:12px;}.societml-intro.societml-lf{margin:6px auto 0 6px;text-align:left;}.societml-intro.societml-rt{margin:6px 6px 0 auto;text-align:right;}';
