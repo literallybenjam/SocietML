@@ -101,7 +101,7 @@
         r;
     for(i=0;i<R.length;i++){
         r=R.item(i);
-        c=document.createElement("frame");
+        c=document.createElement("iframe");
         c.id=i<10?"societml-frame_0"+i:"societml-frame_"+i;
         c.setAttribute("style","display:none;margin:auto;border:none;border-radius:3px;padding:0;width:100%;max-width:768px;min-width:320px;max-height:568px;height:1px;");
         r.parentElement.insertBefore(c,r);
