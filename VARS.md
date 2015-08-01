@@ -21,6 +21,16 @@ A list of variables in societml.js
 - `c`: current frame
 - `D`: data
 - `F`: type-FB init
+    - `C`: this
+    - `c`: content
+    - `E`: element
+    - `e`: sub-element
+    - `I`: C.I
+    - `i`: index
+    - `n`: current node of C.r
+    - `p`: preview
+    - `R`: regex
+    - `r`: result
 - `i`: index
 - `M`: type-MSG init
     - `a`: align-right?

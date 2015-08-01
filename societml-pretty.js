@@ -9,10 +9,121 @@
         i,
         F=function(){
             /* jshint validthis:true */
-            var C = this;
+            var C = this,
+                c,
+                E,
+                e,
+                I,
+                i,
+                n,
+                p,
+                R,
+                r;
             if(!C)return;
+            C.M=new MutationObserver(function(){
+                /* jshint validthis:true */
+                if(M instanceof Array&&this)M.forEach(function(m){
+                },this);
+            });
+            C.m=new MutationObserver(function(){
+                /* jshint validthis:true */
+                if(M instanceof Array&&this)M.forEach(function(m){
+                },this);
+            });
+            C.M.I=C.m.I=C.I=I={};
             C.D.body.textContent="";
-            C.I={};
+            if(C.r.hasAttribute("data-societml-img")){
+                E=C.D.createElement("a");
+                E.className="societml-fb_img_anchor";
+                if(C.r.hasAttribute("data-societml-namesrc"))E.href=C.r.getAttribute("data-societml-namesrc");
+                e=C.D.createElement("div");
+                e.className="societml-fb_img";
+                e.style.backgroundImage='url("'+C.r.getAttribute("data-societml-img").trim()+'")';
+                C.D.body.appendChild(E).appendChild(e);
+            }
+            E=C.D.createElement("p");
+            E.className="societml-fb_heading";
+            e=C.D.createElement("a");
+            e.className="societml-fb_name";
+            if(C.r.hasAttribute("data-societml-namesrc"))e.href=C.r.getAttribute("data-societml-namesrc");
+            if(C.r.hasAttribute("data-societml-name"))e.textContent=C.r.getAttribute("data-societml-name");
+            else e.textContent="A Friend";
+            E.appendChild(e);
+            if(C.r.hasAttribute("data-societml-via")){
+                E.appendChild(C.D.createTextNode(" via "));
+                e=C.D.createElement("a");
+                e.className="societml-fb_name";
+                if(C.r.hasAttribute("data-societml-viasrc"))e.href=C.r.getAttribute("data-societml-viasrc");
+                e.textContent=C.r.getAttribute("data-societml-via");
+                E.appendChild(e);
+            }
+            C.D.body.appendChild(E);
+            if(C.r.hasAttribute("data-societml-datetime")){
+                E=C.D.createElement("time");
+                E.className = "societml-fb_datetime";
+                E.dateTime = C.r.getAttribute("data-societml-datetime");
+                E.title = C.r.getAttribute("data-societml-datetime");
+                E.textContent = C.r.getAttribute("data-societml-datetime");
+                C.D.body.appendChild(E);
+            }
+            c=C.D.createElement("div");
+            c.className="societml-fb_content";
+            E=C.D.createElement("p");
+            E.className="societml-fb_paragraph";
+            for(i=0;i<C.r.childNodes.length;i++){
+                n=C.r.childNodes.item(i);
+                if(n.nodeName!=="#text"&&n.nodeName.toLowerCase()!=="a"&&n.nodeName.toLowerCase()!=="img")continue;
+                if(n.nodeName==="#text"){
+                    R=/\s*(?:\r?\n?[^\r\n]*\S[^\r\n]*)+\s*/g;
+                    while((r=R.exec(n.textContent))){
+                        if(r.index){
+                            c.appendChild(E);
+                            E=C.D.createElement("p");
+                            E.className="societml-fb_paragraph";
+                        }
+                        E.appendChild(C.D.createTextNode(r[0].replace(/^\s+/g," ").replace(/\s+$/g," ")));
+                    }
+                }
+                else if(!p&&n.nodeName.toLowerCase()==="a"&&(n.hasAttribute("data-societml-img")||n.hasAttribute("data-societml-title"))){
+                    if(E.childNodes.length)c.appendChild(E);
+                    p=C.D.createElement("a");
+                    p.className="societml-fb_preview";
+                    p.href=n.href;
+                    if(n.hasAttribute("data-societml-img")){
+                        E=C.D.createElement("div");
+                        E.className="societml-fb_preview_img";
+                        E.style.backgroundImage='url("'+n.getAttribute("data-societml-img").trim()+'")';
+                        p.appendChild(E);
+                    }
+                    if(n.hasAttribute("data-societml-title")){
+                        E=C.D.createElement("div");
+                        E.className="societml-fb_preview_content";
+                        e=C.D.createElement("h1");
+                        e.className="societml-fb_preview_title";
+                        e.textContent=n.getAttribute("data-societml-title");
+                        E.appendChild(e);
+                        if(n.textContent.trim()){
+                            e=C.D.createElement("p");
+                            e.className="societml-fb_preview_text";
+                            e.textContent=n.textContent.trim();
+                            E.appendChild(e);
+                        }
+                        e=C.D.createElement("span");
+                        e.className="societml-fb_preview_info";
+                        e.textContent=p.hostname;
+                        if(n.getAttribute("data-societml-author").trim())e.appendChild(C.D.createTextNode("\u00a0\u00a0|\u00a0\u00a0by "+n.getAttribute("data-societml-author").trim()));
+                        E.appendChild(e);
+                        p.appendChild(E);
+                    }
+                    E=C.D.createElement("p");
+                    E.className="societml-fb_paragraph";
+                }
+                else E.appendChild(C.D.importNode(n,true));
+            }
+            if(E.childNodes.length)c.appendChild(E);
+            C.D.body.appendChild(c);
+            if(p)C.D.body.appendChild(p);
+            C.D.head.appendChild(C.D.createElement("style")).innerHTML='html{margin:0 auto;padding:10px;max-width:512px;background:#E9EAED;}body{margin:0;border-width:1px;border-style:solid;border-color:#E5E6E9 #DFE0E4 #D0D1D5;border-radius:3px;padding:12px;min-height:40px;color:#141823;background:#FFFFFF;font-family:Helvetica,Arial,sans-serif;line-height:1.34;font-size:12px;word-wrap:break-word;}.societml-fb_img_anchor{display:block;float:left;margin:0 8px 0 0;}.societml-fb_img{margin:0;padding:0;width:40px;height:40px;background-position:center;background-size:cover;background-repeat:no-repeat;}.societml-fb_heading{margin:1.175px 0 0;padding:0;font-size:14px;margin-bottom:2px;padding-right:22px;color:#9197A3;}.societml-fb_name{font-weight:bold;}a{color:#3B5998;text-decoration:none;cursor:pointer;}a:hover{text-decoration:underline;}.societml-fb_datetime{color:#9197A3;}.societml-fb_content{clear:both;margin:11px 0 0;border:none;padding:none;}.societml-fb_paragraph{margin:6px 0;padding:0;font-size:14px;white-space:pre-line;}.societml-fb_paragraph:first-child{margin-top:0px;}.societml-fb_paragraph:last-child{margin-bottom:0px;}.societml-fb_preview{display:block;margin:10px 0 0;color:inherit;background:#FFFFFF;box-shadow:0px 0px 0px 1px rgba(0,0,0,0.15) inset,0px 1px 4px rgba(0,0,0,0.1);}.societml-fb_preview:hover{box-shadow:0px 0px 0px 1px rgba(0,0,0,0.15) inset,0px 1px 6px rgba(0,0,0,0.15);text-decoration:none;}.societml-fb_preview_content{display:block;margin:0;padding:10px 12px;max-height:100px;}.societml-fb_preview_title{margin:0 0 5px;padding:0;font-family:Georgia,Lucida Grande,Tahoma,Verdana,Arial,sans-serif;font-size: 18px;font-weight:500;line-height:22px;}.societml-fb_preview_text{margin:0;padding:0;font-size:12px;line-height:16px;}.societml-fb_preview_info{display:block;margin:0;padding:9px 0 0;color:#9197A3;font-size:11px;line-height:11px;text-transform:uppercase;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}.societml-fb_preview_img{display:block;margin:-.5px;padding:0;width:487px;height:244px;background-position:center;background-size:cover;background-repeat:no-repeat;}';
             C.r.setAttribute("hidden","");
             C.c.style.display="block";
             C.c.style.height=C.d.scrollHeight+"px";
